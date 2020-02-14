@@ -32,14 +32,11 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<CounterModel>(
-      builder: (context, counterModel, _) {
-        return Scaffold(
-          body: Center(child: CounterText()),
-          floatingActionButton:
-              FloatingActionButton(onPressed: counterModel.increment),
-        );
-      },
+    return Scaffold(
+      body: Center(child: CounterText()),
+      floatingActionButton:
+          FloatingActionButton(onPressed: Provider.of<CounterModel>(context).increment,
+      ),
     );
   }
 }
