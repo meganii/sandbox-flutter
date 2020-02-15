@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Center(child: CounterText()),
       floatingActionButton:
-          FloatingActionButton(onPressed: Provider.of<CounterModel>(context).increment,
+          FloatingActionButton(onPressed: Provider.of<CounterModel>(context, listen: false).increment,
       ),
     );
   }
